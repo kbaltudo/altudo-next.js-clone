@@ -2,7 +2,7 @@ import { id } from "date-fns/locale";
 
 export default async function handler(req: { method: string; body: { data: any; }; query: { authorId: any } }, res: { status: (arg0: number) => { (): any; new(): any; json: { (arg0: { error?: any; data?: { error: { status: number; message: string; }; }; }): void; new(): any; }; }; json: (arg0: any) => void; id: any }) {
     const authorId = req.query.authorId;
-    let fetcherUrl = `https://dev-drupal-headless-legal.pantheonsite.io/v1/page/${authorId}`;
+    let fetcherUrl = `https://dev-drupal-headless-clone.pantheonsite.io/v1/page/${authorId}`;
     if (req.method === "PATCH") {
         const { data } = req.body;
         //console.log(JSON.stringify(data))
@@ -99,6 +99,6 @@ export default async function handler(req: { method: string; body: { data: any; 
 //       field_social_links: { items: [Array], type: 'entity_reference_revisions' },
 //       field_tumblr: 'nora-garcia',
 //       field_twiterlink: 'nora-garcia',
-//       self: 'https://dev-drupal-headless-legal.pantheonsite.io/v1/page/7'
+//       self: 'https://dev-drupal-headless-clone.pantheonsite.io/v1/page/7'
 //     }
 //   }

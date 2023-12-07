@@ -7,7 +7,7 @@ const fetchTokenData = async () => {
       Authorization: `Bearer ${process.env.AUTHORIZATION_TOKEN}`,
     },
   };
-  const url = `https://dev-drupal-headless-legal.pantheonsite.io/v1/status`;
+  const url = `https://dev-drupal-headless-clone.pantheonsite.io/v1/status`;
   try {
     const response = await axios.get(url, config);
     if (response.statusText === "OK") {

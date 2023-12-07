@@ -93,16 +93,16 @@ async function extractAboutEntries(carouselResponse: { data: any }, ourTeamsEnte
 // Export Data
 export async function getDrupalHomePage() {
     const carouselEntries = await fetcher(
-        'https:\/\/dev-drupal-headless-legal.pantheonsite.io\/v1\/page\/4'
+        'https:\/\/dev-drupal-headless-clone.pantheonsite.io\/v1\/page\/4'
     ),
         cardBlockEntries = await fetcher(
-            'https://dev-drupal-headless-legal.pantheonsite.io/v1/page/47'
+            'https://dev-drupal-headless-clone.pantheonsite.io/v1/page/47'
         )
     return extractHomeEntries(carouselEntries, cardBlockEntries)
 }
 
 export async function getDrupalOurProfessionalPage(pageNumer: Number, location: any[], title: String, area_of_focus: any[]) {
-    const apiUrl = 'https://dev-drupal-headless-legal.pantheonsite.io/v1/bio';
+    const apiUrl = 'https://dev-drupal-headless-clone.pantheonsite.io/v1/bio';
     const params = [];
 
     // Validate and append page
@@ -132,64 +132,64 @@ export async function getDrupalOurProfessionalPage(pageNumer: Number, location: 
             url
         ),
         locationEntries = await fetcher(
-            `https://dev-drupal-headless-legal.pantheonsite.io/v1/locations`
+            `https://dev-drupal-headless-clone.pantheonsite.io/v1/locations`
         ),
         area_of_focusEntries = await fetcher(
-            `https://dev-drupal-headless-legal.pantheonsite.io/v1/area-of-focus`
+            `https://dev-drupal-headless-clone.pantheonsite.io/v1/area-of-focus`
         )
     return extractOurProfessionalEntries(bioEntries, locationEntries, area_of_focusEntries)
 }
 
 export async function getDrupalProductsPage() {
     const productEntries = await fetcher(
-        'https://dev-drupal-headless-legal.pantheonsite.io/v1/products'
+        'https://dev-drupal-headless-clone.pantheonsite.io/v1/products'
     )
     return extractProductsEntries(productEntries)
 }
 
 export async function strapibioDetails(slug: string) {
     const bioEntries = await fetcher(
-        `https://dev-drupal-headless-legal.pantheonsite.io/v1/bio?slug=${slug}`
+        `https://dev-drupal-headless-clone.pantheonsite.io/v1/bio?slug=${slug}`
     )
     return extractOurProfessionalEntry(bioEntries)
 }
 
 export async function strapibioUpdatedDetails(id: string) {
     const bioEntriesUpdated = await fetcher(
-        `https://dev-drupal-headless-legal.pantheonsite.io/v1/page/${id}`
+        `https://dev-drupal-headless-clone.pantheonsite.io/v1/page/${id}`
     )
     return extractOurProfessionalEntryUpdated(bioEntriesUpdated)
 }
 
 export async function getPageTemplateDrupal() {
     const headerEntries = await fetcher(
-        'https://dev-drupal-headless-legal.pantheonsite.io/v1/page/2'
+        'https://dev-drupal-headless-clone.pantheonsite.io/v1/page/2'
     )
     return extractpageTemplate(headerEntries)
 }
 
 export async function getDrupalNewsAndStoriesPage() {
     const blogEntries = await fetcher(
-        'https://dev-drupal-headless-legal.pantheonsite.io/v1/blog_post'
+        'https://dev-drupal-headless-clone.pantheonsite.io/v1/blog_post'
     )
     return extractNewsAndStoriesEntries(blogEntries)
 }
 
 export async function getDrupalAboutPage() {
     const carouselEntries = await fetcher(
-        'https://dev-drupal-headless-legal.pantheonsite.io/v1/page/64'
+        'https://dev-drupal-headless-clone.pantheonsite.io/v1/page/64'
     ),
         ourTeamsEnteries = await fetcher(
-            'https://dev-drupal-headless-legal.pantheonsite.io/v1/page/74'
+            'https://dev-drupal-headless-clone.pantheonsite.io/v1/page/74'
         ),
         cardBlockEnteries = await fetcher(
-            'https://dev-drupal-headless-legal.pantheonsite.io/v1/page/73'
+            'https://dev-drupal-headless-clone.pantheonsite.io/v1/page/73'
         ),
         testimonialCardEnteries = await fetcher(
-            'https://dev-drupal-headless-legal.pantheonsite.io/v1/page/91'
+            'https://dev-drupal-headless-clone.pantheonsite.io/v1/page/91'
         ),
         twoColumnTileEnteries = await fetcher(
-            'https://dev-drupal-headless-legal.pantheonsite.io/v1/page/439'
+            'https://dev-drupal-headless-clone.pantheonsite.io/v1/page/439'
         )
     return extractAboutEntries(carouselEntries, ourTeamsEnteries, cardBlockEnteries, testimonialCardEnteries, twoColumnTileEnteries)
 }
